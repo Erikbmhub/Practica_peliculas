@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cartelera de peliculas</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>CARTELERA PELICULAS</h1>
+    </header>
+    <main>
+      <h2>Nuevas peliculas</h2>
+      <form id="form-pelicula">
+        <label for="imagen">Imagen url:</label>
+        <input
+          type="url"
+          id="imagen"
+          name="imagen"
+          placeholder="url"
+          required
+        />
+        <label for="titulo">Título:</label>
+        <input
+          type="text"
+          id="titulo"
+          name="titulo"
+          placeholder="Título"
+          required
+        />
+        <label for="anio">Año:</label>
+        <input
+          type="text"
+          id="anio"
+          name="anio"
+          inputmode="numeric"
+          maxlength="4"
+          pattern="[0-9]{4}"
+          min="1800"
+          max="2026"
+          placeholder="2026"
+          required
+        />
+        <label for="descripcion">Descripción:</label>
+        <input
+          type="text"
+          id="descripcion"
+          name="descripcion"
+          placeholder="..."
+          required
+        />
+        <label for="genero">Género:</label>
+        <select id="genero" name="genero">
+          <option value="terror">Terror</option>
+          <option value="accion">Acción</option>
+          <option value="comedia">Comedia</option>
+          <option value="romantica">Romántica</option>
+        </select>
+        <label for="clasificacion">Clasificación:</label>
+        <select id="clasificacion" name="clasificacion">
+          <option value="+7">+7</option>
+          <option value="+12">+12</option>
+          <option value="+16">+16</option>
+          <option value="+18">+18</option>
+        </select>
+
+        <button type="submit">Enviar</button>
+      </form>
+      <label for="filtro-genero">Filtrar por género:</label>
+      <select id="filtro-genero">
+        <option value="todos">Todos los géneros</option>
+        <option value="terror">Terror</option>
+        <option value="accion">Acción</option>
+        <option value="comedia">Comedia</option>
+        <option value="romantica">Romántica</option>
+      </select>
+      <label for="buscar-pelicula">Buscar película por título:</label>
+      <input
+        type="text"
+        id="buscar-pelicula"
+        placeholder="Escribe el título de una película..."
+      />
+      <section id="tabla">
+        <section id="cards-container"></section>
+        <table id="tablaPeliculas">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Título</th>
+              <th>Año</th>
+              <th>Descripción</th>
+              <th>Género</th>
+              <th>Clasificación</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpoTabla">
+            <!-- Aquí se añadirán las filas desde JavaScript -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <footer>
+      <h2>Diseñada por Erik Buitrago</h2>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
